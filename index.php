@@ -19,8 +19,27 @@ if (!is_null($events['events'])) {
 		if ($event['type'] == 'message' && $event['message']['type'] == 'text') {
             // Get replyToken
             $replyToken = $event['replyToken'];
-            switch($event['message']['text']) {
+
+
+            $host = 'ec2-50-17-250-30.compute-1.amazonaws.com';
+                $dbname = 'dbvl9ckm0gjlci';
+                $user = 'jtmypzcqbwwcuf';
+                $pass = 'cce251fff9748a8c0205def179b6979aec503f8e67e656a056fd2a354d57181d';
+                $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
                 
+                //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
+                //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
+               // $sql = ("SELECT * FROM ansbot WHERE qu_text like");
+                $result = $connection->query("SELECT * FROM ansbot");
+                //$result = $connection->query($sql);
+               // error_log($sql);
+
+            switch($event['message']['text']) {
+                 
+                case $result->qu_text:
+                           
+                     $respMessage = $result->ans_text;
+                   break;
                 case 'tel':
                     $respMessage = '089-5124512';
                     break;

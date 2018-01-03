@@ -81,8 +81,8 @@ if (!is_null($events['events'])) {
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);
-            $textMessageBuilder = new StickerMessageBuilder($packageId, $stickerId);
-            $response = $bot->replyMessage($replyToken, $textMessageBuilder);
+            $textMessageBuilderSt = new StickerMessageBuilder($packageId, $stickerId);
+            $response = $bot->replyMessage($replyToken, $textMessageBuilder, $textMessageBuilderSt);
 		}
 	}
 }

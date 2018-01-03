@@ -30,7 +30,7 @@ if (!is_null($events['events'])) {
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
                 //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
                // $sql = ("SELECT * FROM ansbot WHERE qu_text like");
-                $result = $connection->query("SELECT * FROM ansbot");
+                $result = $connection->query("SELECT * FROM ansbot where ans_id = 1");
                 //$result = $connection->query($sql);
                // error_log($sql);
 
@@ -41,7 +41,7 @@ if (!is_null($events['events'])) {
                    //  $respMessage = $result->ans_text;
                 //   break;
                  case 'ใครสวยที่สุด':
-                    $respMessage = 'ก้อยไงจ๊ะ'.$result->ans_text;
+                    $respMessage = 'ก้อยไงจ๊ะ'.$result->rowCount();
                     break;
                 case 'tel':
                     $respMessage = '089-5124512';

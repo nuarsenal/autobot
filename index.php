@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
                 //$result = $connection->query($sql);
                // error_log($sql);
 
-                if($result !=null){
+                if($result == true || $result->rowCount() >0) {
                 	foreach ($result as $value) {
                 			$respMessage = $value->ans_text;
                 	}

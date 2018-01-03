@@ -49,9 +49,11 @@ if (!is_null($events['events'])) {
 
                 	//$respMessage = 
                 	
-                }else{
-                	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                 }
+
+                //else{
+                //	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
+                //}
 
 
 

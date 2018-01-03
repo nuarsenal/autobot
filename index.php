@@ -44,7 +44,7 @@ if (!is_null($events['events'])) {
                 	$packageId = 1; 
 					$stickerId = 410; 
                 	foreach($result as $row) {
-               				 $respMessage = $row['ans_text']."\n 9*******9".$result->rowCount();
+               				 $respMessage = $row['ans_text'];
         			}
 
                 	//$respMessage = 
@@ -83,7 +83,7 @@ if (!is_null($events['events'])) {
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);
             $textMessageBuilderSt = new StickerMessageBuilder($packageId, $stickerId);
-            $response = $bot->replyMessage($replyToken, $textMessageBuilder, $textMessageBuilderSt);
+            $response = $bot->replyMessage($replyToken, $textMessageBuilder.$textMessageBuilderSt);
 		}
 	}
 }

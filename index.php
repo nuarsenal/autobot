@@ -41,10 +41,10 @@ if (!is_null($events['events'])) {
                 	//}
 
                 	foreach($result as $row) {
-               				 $respMessage = $row['ans_text'];
+               				 $respMessage = $row['ans_text']."\n 9*******9".$result->rowCount();
         			}
 
-                	$respMessage = "<br>9*******9".$result->rowCount();
+                	//$respMessage = 
                 	
                 }else{
                 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";

@@ -30,11 +30,20 @@ if (!is_null($events['events'])) {
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
                 //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
                // $sql = ("SELECT * FROM ansbot WHERE qu_text like");
-                $result = $connection->query("SELECT * FROM ansbot where ans_id = 1");
+                $result = $connection->query("SELECT * FROM ansbot where qu_text=1");
                 //$result = $connection->query($sql);
                // error_log($sql);
 
-            switch($event['message']['text']) {
+                if($result !=null){
+                	foreach ($result as $value) {
+                			$respMessage = $value->ans_text;
+                	}
+                	
+                }else{
+                	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
+                }
+
+           /* switch($event['message']['text']) {
                  
                 //case '123456':
                //            
@@ -58,7 +67,7 @@ if (!is_null($events['events'])) {
                 default:
                 	$respMessage = "อย่างไงวะเนีย";
                     break;
-            }
+            }*/
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);

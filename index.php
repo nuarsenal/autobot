@@ -29,7 +29,7 @@ if (!is_null($events['events'])) {
                 
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
                 //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
-                $sql = ("SELECT * FROM ansbot WHERE qu_text");
+                $sql = ("SELECT * FROM ansbot");
                 //$result = $connection->query("SELECT * FROM ansbot where qu_text=1");
                 $result = $connection->query($sql);
                // error_log($sql);
@@ -40,16 +40,16 @@ if (!is_null($events['events'])) {
                 			
                 	//}
 
-                	//foreach($result as $row) {
-               		//		 $respMessage = $row['ans_text'];
-        			//}
+                	foreach($result as $row) {
+               				 $respMessage = $row['ans_text'];
+        			}
 
                 	$respMessage = "<br>9*******9".$result->rowCount();
                 	
                 }else{
                 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                 }
-                $respMessage = "9*******911".$result->rowCount();
+                //$respMessage = "9*******9".$result->rowCount();
 
            /* switch($event['message']['text']) {
                  

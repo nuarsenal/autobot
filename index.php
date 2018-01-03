@@ -44,14 +44,14 @@ if (!is_null($events['events'])) {
                		//		 $respMessage = $row['ans_text'];
         			//}
 
-                	$respMessage = "9*******91".$result->rowCount();
+                	//$respMessage = "9*******91".$result->rowCount();
                 	
                // }else{
                // 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                // }
                // $respMessage = "9*******9".$result->rowCount();
 
-           /* switch($event['message']['text']) {
+            switch($event['message']['text']) {
                  
                 //case '123456':
                //            
@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
                 default:
                 	$respMessage = "อย่างไงวะเนีย";
                     break;
-            }*/
+            }
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);

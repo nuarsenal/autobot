@@ -25,7 +25,7 @@ if (!is_null($events['events'])) {
                 $connection = new PDO("pgsql:host=$host;dbname=$dbname", $user, $pass); 
                 
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
-                $sql = sprintf("SELECT * FROM poll WHERE user_id='%ใครสวยที่สุด' ");
+                $sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%ใครสวยที่สุด%' ");
                
                 //$sql = sprintf("SELECT * FROM ansbot WHERE ans_text='%%'");
                 $result = $connection->query($sql);

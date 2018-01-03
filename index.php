@@ -29,29 +29,29 @@ if (!is_null($events['events'])) {
                 
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
                 //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
-                $sql = ("SELECT * FROM ansbot");
+                $sql = ("SELECT * FROM ansbot WHERE qu_text");
                 //$result = $connection->query("SELECT * FROM ansbot where qu_text=1");
                 $result = $connection->query($sql);
                // error_log($sql);
 
-               // if($result->rowCount() >0) {
+                if($result->rowCount() >0) {
                 	//while($row=pg_fetch_assoc($result)){
                 	// 	$respMessage = $row['ans_text'];
                 			
                 	//}
 
-                	//foreach($result as $row) {
-               		//		 $respMessage = $row['ans_text'];
-        			//}
+                	foreach($result as $row) {
+               				 $respMessage = $row['ans_text'];
+        			}
 
-                	//$respMessage = "9*******91".$result->rowCount();
+                	$respMessage = "<br>9*******9".$result->rowCount();
                 	
-               // }else{
-               // 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
-               // }
-               // $respMessage = "9*******9".$result->rowCount();
+                }else{
+                	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
+                }
+                //$respMessage = "9*******9".$result->rowCount();
 
-            switch($event['message']['text']) {
+           /* switch($event['message']['text']) {
                  
                 //case '123456':
                //            
@@ -75,7 +75,7 @@ if (!is_null($events['events'])) {
                 default:
                 	$respMessage = "อย่างไงวะเนีย";
                     break;
-            }
+            }*/
             $httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);

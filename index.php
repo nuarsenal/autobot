@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
                 $result = $connection->query($sql);
                // error_log($sql);
 
-                if($result == true || $result->rowCount() >0) {
+                if($result->rowCount() >0) {
                 	//while($row=pg_fetch_assoc($result)){
                 	// 	$respMessage = $row['ans_text'];
                 			
@@ -44,11 +44,12 @@ if (!is_null($events['events'])) {
                		//		 $respMessage = $row['ans_text'];
         			//}
 
-                	$respMessage = "9*******9";
+                	$respMessage = "9*******91".$result->rowCount();
                 	
                 }else{
                 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                 }
+                $respMessage = "9*******9".$result->rowCount();
 
            /* switch($event['message']['text']) {
                  

@@ -52,6 +52,10 @@ if (!is_null($events['events'])) {
                 }else{
                 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                 }
+
+
+
+              
                 //$respMessage = "9*******9".$result->rowCount();
 
            /* switch($event['message']['text']) {
@@ -79,14 +83,22 @@ if (!is_null($events['events'])) {
                 	$respMessage = "อย่างไงวะเนีย";
                     break;
             }*/
-            $httpClient = new CurlHTTPClient($channel_token);
+            
+		}
+
+		if ($event['type'] == 'join') {
+
+                	$respMessage = 'สวัสดีจ้าทุกคน...';
+        }
+
+
+		$httpClient = new CurlHTTPClient($channel_token);
             $bot = new LINEBot($httpClient, array('channelSecret' => $channel_secret));
             $textMessageBuilder = new TextMessageBuilder($respMessage);
             //$textMessageBuilderSt = new StickerMessageBuilder($packageId, $stickerId);
 
             //$textall = $textMessageBuilder.$textMessageBuilderSt;
             $response = $bot->replyMessage($replyToken, $textMessageBuilder);
-		}
 	}
 }
 echo "OK";

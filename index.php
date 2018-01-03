@@ -34,7 +34,7 @@ if (!is_null($events['events'])) {
                 $result = $connection->query($sql);
                // error_log($sql);
 
-                if($result->rowCount() =>1) {
+                if($result->rowCount()) {
                 	//while($row=pg_fetch_assoc($result)){
                 	// 	$respMessage = $row['ans_text'];
                 			

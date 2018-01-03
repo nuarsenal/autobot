@@ -29,7 +29,8 @@ if (!is_null($events['events'])) {
                 
                 //$sql = sprintf("SELECT * FROM poll WHERE user_id='%s' ", $event['source']['userId']);
                 //$sql = sprintf("SELECT * FROM ansbot WHERE qu_text like '%s' ",  $event['message']['text']);
-                $sql = ("SELECT * FROM ansbot where qu_text like", $event['message']['text']);
+                $revmessage = $event['message']['text'];
+                $sql = "SELECT * FROM ansbot where qu_text like '$revmessage'";
                 //$result = $connection->query("SELECT * FROM ansbot where qu_text=1");
                 $result = $connection->query($sql);
                // error_log($sql);

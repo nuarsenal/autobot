@@ -40,6 +40,9 @@ if (!is_null($events['events'])) {
                //            
                    //  $respMessage = $result->ans_text;
                 //   break;
+                 case 'ใครสวยที่สุด':
+                    $respMessage = 'ก้อยไงจ๊ะ';
+                    break;
                 case 'tel':
                     $respMessage = '089-5124512';
                     break;

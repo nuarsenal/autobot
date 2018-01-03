@@ -36,7 +36,7 @@ if (!is_null($events['events'])) {
 
             switch($event['message']['text']) {
                  
-                case $result->qu_text:
+                case '123456':
                            
                      $respMessage = $result->ans_text;
                    break;

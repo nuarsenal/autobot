@@ -35,8 +35,9 @@ if (!is_null($events['events'])) {
                // error_log($sql);
 
                 if($result == true || $result->rowCount() >0) {
-                	foreach ($result as $value) {
-                			$respMessage = $value->ans_text;
+                	while($row=pg_fetch_assoc($result)){
+                	 	$respMessage = $row['ans_text'];
+                			
                 	}
                 	
                 }else{

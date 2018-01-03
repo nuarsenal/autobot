@@ -38,7 +38,7 @@ if (!is_null($events['events'])) {
                  
                 //case '123456':
                //            
-                     $respMessage = $result->ans_text;
+                   //  $respMessage = $result->ans_text;
                 //   break;
                 case 'tel':
                     $respMessage = '089-5124512';

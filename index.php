@@ -34,22 +34,22 @@ if (!is_null($events['events'])) {
                 $result = $connection->query($sql);
                // error_log($sql);
 
-                if($result->rowCount() >0) {
+                if($result->rowCount() =>1) {
                 	//while($row=pg_fetch_assoc($result)){
                 	// 	$respMessage = $row['ans_text'];
                 			
                 	//}
 
-                	foreach($result as $row) {
-               				 $respMessage = $row['ans_text'];
-        			}
+                	//foreach($result as $row) {
+               		//		 $respMessage = $row['ans_text'];
+        			//}
 
                 	$respMessage = "<br>9*******9".$result->rowCount();
                 	
                 }else{
                 	$respMessage = "อย่างไงวะเนีย ฮ่าฮ่าฮ่า";
                 }
-                //$respMessage = "9*******9".$result->rowCount();
+                $respMessage = "9*******911".$result->rowCount();
 
            /* switch($event['message']['text']) {
                  

@@ -6,6 +6,7 @@ require_once('./vendor/autoload.php');
 use \LINE\LINEBot\HTTPClient\CurlHTTPClient;
 use \LINE\LINEBot;
 use \LINE\LINEBot\MessageBuilder\TextMessageBuilder;
+use \LINE\LINEBot\MessageBuilder\StickerMessageBuilder;
 $channel_token = 'ohm7HGbyR8rqmNuryddTXETn18dFngQo2Xy1VnJL27E0KJB6BbKjj0F8hgNCjdMkAIb2wBoQpuayS33w1XW61HIKt1F76IsjFQU5T5d1fZUVKNpgJ36UUw/YFy87VXdkqLLoffTe53BJU3BHQXJ68QdB04t89/1O/w1cDnyilFU='; 
 $channel_secret = 'c70f830212cdded6367ad678cce5d73f';
 // Get message from Line API
